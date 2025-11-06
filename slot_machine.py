@@ -1,11 +1,3 @@
-"""
-Terminal Slot Machine — Final Project
-Author: (Your Name)
-Course: (Course / Section)
-
-How to run:
-    python3 slot_machine.py
-"""
 
 import random
 from collections import Counter
@@ -15,7 +7,7 @@ from collections import Counter
 # -------------------------------
 STARTING_BALANCE = 100        # Default starting credits
 MIN_BET = 1
-MAX_BET = 10
+MAX_BET = 100
 
 # Symbol frequencies (weights) approximate "rarity" on each reel.
 # Higher numbers = more common; lower numbers = rarer.
@@ -45,18 +37,18 @@ TWO_CHERRIES_PAYOUT = 1  # returns 1x bet if exactly two 🍒 on the line
 # CORE MECHANICS
 # -------------------------------
 def build_reel(symbol_weights):
-    """Return a list representing a single reel strip built from weights."""
+    "Return a list representing a single reel strip built from weights."
     reel = []
     for sym, w in symbol_weights.items():
         reel.extend([sym] * int(w))
     return reel
 
 def spin_reels(rng, reels):
-    """Spin three reels and return the symbols on the single center payline."""
+    "Spin three reels and return the symbols on the single center payline."
     return tuple(rng.choice(reel) for reel in reels)
 
 def evaluate_payline(line, bet):
-    """Return (payout, message). payout is the CREDIT amount (not multiplier)."""
+    "Return (payout, message). payout is the CREDIT amount (not multiplier)."
     c = Counter(line)
     # 3-of-a-kind
     for sym in PAYOUTS_3OAK:
@@ -88,7 +80,7 @@ def prompt_bet(balance):
         return amt
 
 def main():
-    print("🎰 Welcome to the Terminal Slot Machine! (single center payline)")
+    print("🎰 Welcome to the Gamble3000! (Go All In Or You Are A Softie)")
     print("Symbols: 7, BAR, 🔔, ⭐, 🍋, 🍒")
     print(f"Payouts (3-of-a-kind, x bet): {PAYOUTS_3OAK}")
     print(f"Consolation: exactly two 🍒 pays {TWO_CHERRIES_PAYOUT}x bet")
@@ -114,7 +106,7 @@ def main():
         print(f"Balance: {balance} credits\n")
 
         if balance < MIN_BET:
-            print("You are below the minimum bet. Game over!")
+            print("You are below the minimum bet. Ur Washed.")
             print(f"Final cashout: {balance} credits.")
             break
 
