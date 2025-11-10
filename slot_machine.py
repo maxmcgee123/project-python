@@ -79,6 +79,7 @@ def prompt_bet(balance):
             continue
         return amt
 
+# Main interface User sees
 def main():
     print("🎰 Welcome to the Gamble3000! (Go All In Or You Are A Softie)")
     print("Symbols: 7, BAR, 🔔, ⭐, 🍋, 🍒")
@@ -104,7 +105,7 @@ def main():
         print(msg)
         balance += win
         print(f"Balance: {balance} credits\n")
-
+# Running out of credits = Game Over
         if balance < MIN_BET:
             print("You are below the minimum bet. Ur Washed.")
             print(f"Final cashout: {balance} credits.")
