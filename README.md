@@ -8,7 +8,7 @@ A small, focused slot machine you can play in the terminal. It uses a single **c
 
 **Build a minimal slot machine** you can play from the terminal:
 - You start with credits.
-- Choose a bet (1–10 credits).
+- Choose a bet (1–100 credits).
 - Spin 3 reels and read the result on the center payline.
 - Get paid for **3-of-a-kind** and a small consolation for **two cherries**.
 - Cash out any time.
@@ -118,7 +118,7 @@ Payouts (3-of-a-kind, x bet): {'7': 50, 'BAR': 20, '🔔': 10, '⭐': 8, '🍋':
 Consolation: exactly two 🍒 pays 1x bet
 
 Starting balance: 100 credits.
-Enter your bet (1-10) or 'q' to cash out:
+Enter your bet (1-100) or 'q' to cash out:
 ```
 
 ---
